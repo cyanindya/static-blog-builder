@@ -1,0 +1,39 @@
+<!-- Hello world! -->
+<!-- https://bsky.app/profile/exclaebur.bsky.social/post/3lhsdjryujs2a -->
+
+<h3>Preface</h3>
+<p>
+	We all know how new projects should always be started by a "hello world" post, so I decided
+	to make one as well.
+</p>
+<p>
+	This file serves to give you an example on how you should write your post before compiling the file
+	into browser-readable HTML file.
+</p>
+
+<!-- break -->
+
+<p>
+	As you see by now, the contents of your blog post should be written in HTML. The HTML file should be saved
+	with name format denoting the post date and post title, although this is not mandatory. If you notice the first
+	comment of this document, you see the full title of this post; the <code>make-blog.js</code> will use that comment
+	as the post title, and if no date is given in the file name, the program will use current date.
+</p>
+<p>
+	If you want to create multi-page blog post, simply add <code>&lt;!-- break --gt;</code> between two paragraphs.
+	You should see the output file under <code>dist/blog/posts/</code> already have the post paged.
+</p>
+<p>
+	By default, I use the <a href="https://github.com/czue/bluesky-comments">bluesky-comments</a> library to use
+	existing Bluesky thread from my account as comment section of the post. If you'd like to use other services such as
+	Disqus, you'll need to make adjustments to the <code>template-blog-main.hbs</code> file.
+</p>
+
+<!-- break -->
+
+<p>
+	I think that concludes my brief write-up on how to use the static blog generator.
+</p>
+<p>
+	Have fun!
+</p>

@@ -1,0 +1,18 @@
+<article class="post-container">
+	{{#with post}}
+	<div id="post-title">
+		<h2>{{title}}</h2>
+	</div>
+	<div id="post-date-author">
+		Posted at <span class="post-date">{{date}}</span> by <span class="post-author">{{author}}</span>
+	</div>
+	<div id="title-date-divider"></div>
+	<div id="post-content">
+		<section id="page-1" data-page="1">
+		{{{content}}}
+		</section>
+	</div>
+	{{#if pages}}{{> post-page-nav}}{{/if}}
+	{{/with}}
+</article>
+{{> post-prev-next}}

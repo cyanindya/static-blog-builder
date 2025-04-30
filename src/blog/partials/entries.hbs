@@ -1,0 +1,45 @@
+<section id="page-1" data-page="1">
+{{#if index}}
+{{#each (limit posts 5)}}
+<article class="post-container">
+	<div id="post-title">
+		<h2>{{title}}</h2>
+	</div>
+	<div id="post-date-author">
+		Posted at <span class="post-date">{{date}}</span> by <span class="post-author">{{author}}</span>
+	</div>
+	<div id="title-date-divider"></div>
+	<div id="post-content">
+		{{{excerpt}}}
+	</div>
+	<div><a href="{{uri}}">Read more &gt;&gt;</a></div>
+</article>
+{{/each}}
+{{else}}
+{{#each posts}}
+<article class="post-container">
+	<div id="post-title">
+		<h2>{{title}}</h2>
+	</div>
+	<div id="post-date-author">
+		Posted at <span class="post-date">{{date}}</span> by <span class="post-author">{{author}}</span>
+	</div>
+	<div id="title-date-divider"></div>
+	<div id="post-content">
+		{{{excerpt}}}
+	</div>
+	<div><a href="{{uri}}">Read more &gt;&gt;</a></div>
+</article>
+{{#compare @index '%' 5}}
+</section>
+<section id="page-{{divide @index 5}}" data-page="{{divide @index 5}}">
+{{/compare}}
+{{/each}}
+{{/if}}
+</section>
+
+{{#if index}}
+<div><a href="./archive">All posts &gt;&gt;</a></div>
+{{else}}
+{{> post-page-nav}}
+{{/if}}

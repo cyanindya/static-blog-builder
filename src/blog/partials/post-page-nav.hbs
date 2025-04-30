@@ -1,0 +1,18 @@
+<div id="post-page-nav">
+	{{#if pages}}
+	<span id="post-page-nav-label">Pages:</span>
+	<a href="#page-1" class="pageId" onclick="changePage(1)">1</a>
+	{{#each pages}}
+		<a href="#page-{{page}}" class="pageId" onclick="changePage({{page}})">{{page}}</a>
+	{{/each}}
+	{{/if}}
+	{{#unless post}}
+	<ul class="index-page-nav">
+		{{#each posts}}
+		{{#compare @index '%' 5}}
+		<li><a href="#page-{{divide @index 5}}" class="pageId" onclick="changePage({{divide @index 5}})">{{divide @index 5}}</a></li>
+		{{/compare}}
+		{{/each}}
+	</ul>
+	{{/unless}}
+</div>
