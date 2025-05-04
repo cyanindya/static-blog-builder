@@ -14,6 +14,7 @@
 	</div>
 	<div><a href="{{uri}}">Read more &gt;&gt;</a></div>
 </article>
+<hr class="separator">
 {{/each}}
 {{else}}
 {{#each posts}}
@@ -30,6 +31,7 @@
 	</div>
 	<div><a href="{{uri}}">Read more &gt;&gt;</a></div>
 </article>
+<hr class="separator">
 {{#compare @index '%' 5}}
 </section>
 <section id="page-{{divide @index 5}}" data-page="{{divide @index 5}}">
@@ -39,7 +41,7 @@
 </section>
 
 {{#if index}}
-<div><a href="./archive">All posts &gt;&gt;</a></div>
+<div id="post-blog-all-posts"><a href="./archive">All posts &gt;&gt;</a></div>
 {{else}}
 {{> post-page-nav}}
 {{/if}}

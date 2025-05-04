@@ -20,6 +20,7 @@ let posts = []
 let blogJsonOutput = {
 	author: author,
 	title: blogTitle,
+	description: description,
 }
 
 /* 
@@ -74,6 +75,7 @@ postFiles.forEach((postFile) => {
 	let hasDate = dateFormat.test(postFile.slice(0, 11));
 	let postData = {
 		title: blogTitle,
+		description: description,
 		post : {author: author},
 		// posts: [],
 		// postlimit: recentPostCountLimit
@@ -190,10 +192,12 @@ fs.writeFileSync(
 
 createPage({ // Archives
 	title: blogTitle,
+	description: description,
 	posts: posts,
 }, 'archive');
 createPage({ // Index page
 	title: blogTitle,
+	description: description,
 	posts: posts,
 	index: 'true'
 });

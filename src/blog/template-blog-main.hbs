@@ -19,21 +19,25 @@
 
 		<div class="page-body">
 			<div class="page-header">
-				<h1>
+				<h1 class="blog-title">
 					{{title}}
-					{{#unless post}}
+					{{!--{{#unless post}}
 					{{#unless index}}
 					&gt; archives
 					{{/unless}}
-					{{/unless}}
+					{{/unless}}--}}
 				</h1>
+				<h4 class="blog-subtitle">{{description}}</h4>
 			</div>
+			<hr class="separator">
 			{{!-- this template is used for both individual posts and archive,
 			so check if we're going to compile post with partial/recent archive
 			or full archive. --}}
 			{{#if post}}
 			{{> post-body}}
+			<hr class="separator">
 			{{> post-more recentonly=true}}
+			<hr class="separator">
 			<!-- If you want to add stuffs (e.g. Disqus/external comments addon), add it below here -->
 			{{#> post-comment}}Loading comment...{{/post-comment}}
 			{{else}}
